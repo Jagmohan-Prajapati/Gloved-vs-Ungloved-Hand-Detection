@@ -1,18 +1,65 @@
-# Ignore dataset folders and files
+#Dataset (ignore all splits and contents)
 dataset/
 dataset/**
 
-# Ignore common output and cache files
-__pycache__/
-*.pyc
+#Keep a placeholder/readme if you add one later
+!dataset/README.md
+!dataset/.gitkeep
+
+Python caches and compiled files
+pycache/
+*.py[cod]
 *.pyo
 *.pyd
-*.log
+*.so
 
-# Ignore Jupyter Notebook checkpoints
-.ipynb_checkpoints/
-
-# Ignore environment files
-.env
+#Virtual environments
+.venv/
 venv/
 env/
+ENV/
+
+#Jupyter/IPython
+.ipynb_checkpoints/
+.ipython/
+.profile_default/
+
+#OS/filesystem noise
+.DS_Store
+Thumbs.db
+
+#Logs and temp files
+*.log
+*.tmp
+.cache/
+.cache/
+.cache-/
+pip-log.txt
+
+#Model runs / checkpoints (optional to ignore)
+runs/
+checkpoints/
+weights/
+*.pt
+*.onnx
+*.engine
+
+#Ultralytics/YOLO caches
+train.cache
+val.cache
+
+#Build artifacts
+build/
+dist/
+*.egg-info/
+
+#Editors/IDEs
+.vscode/
+.idea/
+
+
+#Output artifacts
+output/
+logs/
+!Part_1_Glove_Detection/output/
+!Part_1_Glove_Detection/logs/
