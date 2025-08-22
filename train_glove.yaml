@@ -1,0 +1,53 @@
+# YOLOv8 training configuration focused on factory hands/gloves
+task: detect
+mode: train
+
+model: yolov8s.pt
+data: dataset.yaml
+epochs: 120
+imgsz: 640
+batch: 16
+workers: 8
+optimizer: auto
+cos_lr: true
+patience: 30
+
+# Augmentations (on-the-fly)
+hsv_h: 0.015
+hsv_s: 0.70
+hsv_v: 0.40
+degrees: 5.0
+translate: 0.08
+scale: 0.40
+shear: 3.0
+perspective: 0.0005
+flipud: 0.0
+fliplr: 0.5
+mosaic: 0.6
+mixup: 0.15
+copy_paste: 0.0
+erasing: 0.3
+
+# Albumentations (extra blur/noise and lighting)
+augment: true
+albumentations: [
+  {"type": "MotionBlur", "p": 0.25, "blur_limit": 5},
+  {"type": "GaussianBlur", "p": 0.15, "blur_limit": 3},
+  {"type": "GaussNoise", "p": 0.20, "var_limit": [5.0, 25.0]},
+  {"type": "CLAHE", "p": 0.15, "clip_limit": 2.0, "tile_grid_size": [8, 8]},
+  {"type": "RandomBrightnessContrast", "p": 0.25, "brightness_limit": 0.2, "contrast_limit": 0.2},
+  {"type": "RGBShift", "p": 0.10, "r_shift_limit": 10, "g_shift_limit": 10, "b_shift_limit": 10},
+  {"type": "ToGray", "p": 0.05}
+]
+
+# Saving/validation
+val: true
+save: true
+plots: true
+
+# Optimization
+device: ''         
+lr0: 0.003
+lrf: 0.01
+momentum: 0.937
+weight_decay: 0.0005
