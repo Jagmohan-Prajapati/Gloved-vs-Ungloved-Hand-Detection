@@ -1,16 +1,6 @@
 # Ignore dataset folders and files
 dataset/
-data/
-*.csv
-*.tsv
-*.xlsx
-*.json
-*.zip
-*.tar
-*.tar.gz
-*.h5
-*.npz
-*.npy
+dataset/**
 
 # Ignore common output and cache files
 __pycache__/
