@@ -1,0 +1,28 @@
+# Ignore dataset folders and files
+dataset/
+data/
+*.csv
+*.tsv
+*.xlsx
+*.json
+*.zip
+*.tar
+*.tar.gz
+*.h5
+*.npz
+*.npy
+
+# Ignore common output and cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore environment files
+.env
+venv/
+env/
